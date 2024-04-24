@@ -13,7 +13,7 @@ a{
   color: #eee;
 }
 
-#header.is-sticky {
+header.is-sticky {
   position: fixed;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.1);
   padding: 8px 0;
@@ -199,6 +199,9 @@ nav{
   transition: .5s;
   z-index: 30;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .arrows button:hover{
   background-color: #eee;
@@ -373,6 +376,7 @@ nav{
 @media screen and (max-width: 670px) {
   .carousel .list .item .content{
       padding-right: 0;
+      max-width: 90%;
   }
   .carousel .list .item .content .topic{
       font-size: 1.8rem;
@@ -385,6 +389,7 @@ nav{
   }
   .arrows{
       top: 90%;
+      left: 5%;
   }
 }
 
