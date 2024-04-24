@@ -1,188 +1,144 @@
 import React, { useEffect } from 'react'
-import pic1 from '../images/pic1.jpg'
-import pic2 from '../images/pic2.jpg'
-import pic3 from '../images/pic3.jpg'
-import pic4 from '../images/pic4.jpg'
-import { ArrowLeft, ArrowRight } from '@mui/icons-material'
-import { Link } from 'react-router-dom'
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+
+import {
+    AppBar,
+    Stack,
+    ThemeProvider,
+    Toolbar,
+    createTheme,
+    Link,
+    Button,
+    IconButton,
+    Divider,
+    Box,
+} from "@mui/material"
+
+import {
+    Language,
+    Search,
+    Person2Outlined
+} from '@mui/icons-material'
+import logo from '../logo.png'
+import { Outlet } from 'react-router-dom';
+
+const pages = [{
+        title: "Home",
+        link: "/"
+    },
+    {
+        title: "About Us",
+        link: "/about-us"
+    },
+    {
+        title: "Products",
+        link: "/products"
+    },
+    {
+        title: "Services",
+        link: "/services"
+    },
+    {
+        title: "Contact Us",
+        link: "/contact-us"
+    }
+]
 
 function Layout() {
+    useEffect(() => {
+        const header = document.querySelector(".header");
+        const toggleClass = "is-sticky";
 
-    useEffect(()=>{
-        let nextDom = document.getElementById('next');
-        let prevDom = document.getElementById('prev');
-        let carouselDom = document.querySelector('.carousel');
-        let listItemDom = document.querySelector('.carousel .list');
-        let thumbnailDom = document.querySelector('.carousel .thumbnail');
-
-        nextDom.onclick = function(){
-            showSlider("next");
-        }
-        prevDom.onclick = function(){
-            showSlider("prev");
-        }
-        let timeRunning = 3000;
-        let timeAutoNext = 7000;
-        let runTimeout;
-        let runAutoRun = setTimeout(() => {
-            nextDom.click();
-        }, timeAutoNext);
-
-        function showSlider(type){
-            let itemSlider = document.querySelectorAll('.carousel .list .item');
-            let itemThumbnail = document.querySelectorAll('.carousel .thumbnail .item');
-
-            if(type === 'next'){
-                listItemDom.appendChild(itemSlider[0]);
-                thumbnailDom.appendChild(itemThumbnail[0]);
-                carouselDom.classList.add('next');
-            }else{
-                let positionLastItem = itemSlider.length - 1;
-                listItemDom.prepend(itemSlider[positionLastItem]);
-                thumbnailDom.prepend(itemThumbnail[positionLastItem]);
-                carouselDom.classList.add('prev');
+        window.addEventListener("scroll", () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > 150) {
+                header.classList.add(toggleClass);
+            } else {
+                header.classList.remove(toggleClass);
             }
+        });
+    })
 
-            clearTimeout(runTimeout);
-            runTimeout = setTimeout(() => {
-                carouselDom.classList.remove('next');
-                carouselDom.classList.remove('prev');
-            }, timeRunning)
-
-            clearTimeout(runAutoRun);
-            runAutoRun = setTimeout(() => {
-                nextDom.click()
-            }, timeAutoNext);
+    const theme = createTheme({
+        palette: {
+            primary: {
+                main: "#3A3A8D",
+                dark: "#2E2877",
+                light: "#828AC7",
+                lighter: "#E9EBF5"
+            },
+            secondary: {
+                main: "#E52027",
+                dark: "#B8000B",
+                light: "F19493",
+                lighter: "#FFEAED"
+            },
+            white: "#ffffff"
         }
-    });
+    })
 
     return (
         <>
-            <header>
-                <nav>
-                    <Link href="">Home</Link>
-                    <Link href="">Aout</Link>
-                    <Link href="">Info</Link>
-                </nav>
-            </header>
-
-            <div class="carousel">
-                <div class="list">
-                    <div class="item">
-                        <img src={pic1} alt="" />
-                        <div class="content">
-                            <div class="author">OLUWAYEMI</div>
-                            <div class="title">DESIGN SLIDER</div>
-                            <div class="topic">PHOTOSHOP</div>
-                            <div class="des">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad repudiandae dolorum suscipit reiciendis facilis officia sit! Ab labore, laboriosam laudantium alias quo voluptates dolor ducimus? Ipsum delectus deserunt nostrum optio?
-                            </div>
-                            <div class="buttons">
-                                <button>SEE MORE</button>
-                                <button>SUBSCRIBE</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src={pic2} alt="" />
-                        <div class="content">
-                            <div class="author">OLUWAYEMI</div>
-                            <div class="title">DESIGN SLIDER</div>
-                            <div class="topic">PHOTOSHOP</div>
-                            <div class="des">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad repudiandae dolorum suscipit reiciendis facilis officia sit! Ab labore, laboriosam laudantium alias quo voluptates dolor ducimus? Ipsum delectus deserunt nostrum optio?
-                            </div>
-                            <div class="buttons">
-                                <button>SEE MORE</button>
-                                <button>SUBSCRIBE</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src={pic3} alt="" />
-                        <div class="content">
-                            <div class="author">OLUWAYEMI</div>
-                            <div class="title">DESIGN SLIDER</div>
-                            <div class="topic">PHOTOSHOP</div>
-                            <div class="des">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad repudiandae dolorum suscipit reiciendis facilis officia sit! Ab labore, laboriosam laudantium alias quo voluptates dolor ducimus? Ipsum delectus deserunt nostrum optio?
-                            </div>
-                            <div class="buttons">
-                                <button>SEE MORE</button>
-                                <button>SUBSCRIBE</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src={pic4} alt="" />
-                        <div class="content">
-                            <div class="author">OLUWAYEMI</div>
-                            <div class="title">DESIGN SLIDER</div>
-                            <div class="topic">PHOTOSHOP</div>
-                            <div class="des">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad repudiandae dolorum suscipit reiciendis facilis officia sit! Ab labore, laboriosam laudantium alias quo voluptates dolor ducimus? Ipsum delectus deserunt nostrum optio?
-                            </div>
-                            <div class="buttons">
-                                <button>SEE MORE</button>
-                                <button>SUBSCRIBE</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="thumbnail">
-                    <div class="item">
-                        <img src={pic1} alt="" />
-                        <div class="content">
-                            <div class="title">
-                                Name Slider
-                            </div>
-                            <div class="des">
-                                Description
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src={pic2} alt="" />
-                        <div class="content">
-                            <div class="title">
-                                Name Slider
-                            </div>
-                            <div class="des">
-                                Description
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src={pic3} alt="" />
-                        <div class="content">
-                            <div class="title">
-                                Name Slider
-                            </div>
-                            <div class="des">
-                                Description
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src={pic4} alt="" />
-                        <div class="content">
-                            <div class="title">
-                                Name Slider
-                            </div>
-                            <div class="des">
-                                Description
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="arrows">
-                    <button id="prev"><ArrowLeft /></button>
-                    <button id="next"><ArrowRight /></button>
-                </div>
-            <div class="time"></div>
-        </div>
+        <ThemeProvider theme={theme}>
+            <AppBar className='header' window sx={{
+                background: '#00000088',
+                position: 'relative',
+                zIndex: '100',
+                boxShadow: 'none',
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'space-between'
+            }}>
+                <Box sx={{
+                    padding: "0rem 2rem"
+                }}>
+                    <img src={logo} alt="" srcset="" style={{width: '8rem'}} />
+                </Box>
+                <Stack component='nav' className='nav' direction='row'>
+                    <Stack direction='row' spacing={2} justifyContent={'space-between'} sx={{
+                        padding: "0rem 0rem 0rem 2rem",
+                        width: 'fit-content'
+                    }}>
+                        {pages.map((page) => {
+                            return (
+                                <Link component={Button} disableElevation disableFocusRipple href={page.link} sx={{
+                                    color: "white",
+                                    textDecoration: "none",
+                                    fontSize: '0.8rem',
+                                    padding: '0',
+                                    "&:hover": {
+                                        background: "none"
+                                    }
+                                }}>{page.title}</Link>
+                            )
+                        })}
+                    </Stack>
+                    <Stack direction='row' spacing={1} sx={{
+                        padding: "0rem 2rem 0rem 2rem",
+                    }}>
+                        <IconButton>
+                            <Search sx={{
+                                color: 'white'
+                            }} />
+                        </IconButton>
+                        <IconButton>
+                            <Person2Outlined sx={{
+                                color: 'white'
+                            }} />
+                        </IconButton>
+                        <IconButton>
+                            <Language sx={{
+                                color: 'white'
+                            }} />
+                        </IconButton>
+                    </Stack>
+                </Stack>
+            </AppBar>
+        </ThemeProvider>
+        <Outlet />
         </>
     )
 }
