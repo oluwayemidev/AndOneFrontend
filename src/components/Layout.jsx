@@ -19,30 +19,40 @@ import {
     Language,
     Search,
     Person2Outlined,
-    Menu
+    Menu,
+    Home,
+    People,
+    Shop,
+    DesignServices,
+    ContactPage
 } from '@mui/icons-material'
 import logo from '../logo.png'
 import { Outlet } from 'react-router-dom';
 
 const pages = [{
         title: "Home",
-        link: "/"
+        link: "/",
+        icon: `${<Home />}`
     },
     {
         title: "About Us",
-        link: "/about-us"
+        link: "/about-us",
+        icon: `${<People />}`
     },
     {
         title: "Products",
-        link: "/products"
+        link: "/products",
+        icon: `${<Shop />}`
     },
     {
         title: "Services",
-        link: "/services"
+        link: "/services",
+        icon: `<DesignServices />`
     },
     {
         title: "Contact Us",
-        link: "/contact-us"
+        link: "/contact-us",
+        icon: `${<ContactPage />}`
     }
 ]
 
@@ -57,6 +67,7 @@ function Layout() {
         const header = document.querySelector("header");
         const toggleClass = "is-sticky";
         const menuItem = document.querySelectorAll('nav a');
+        const menuIcon = document.querySelectorAll('nav svg');
 
         window.addEventListener("scroll", () => {
             const currentScroll = window.pageYOffset;
@@ -68,9 +79,12 @@ function Layout() {
         });
 
         if(window.location.pathname === '/'){
-            header.style.background = '#2E2877';
+            header.style.background = 'white';
             for (let i = 0; i < menuItem.length; i++) {
                 menuItem[i].style.color = "white";
+            }
+            for (let i = 0; i < menuIcon.length; i++) {
+                menuIcon[i].style.fill = "#3A3A8D";
             }
         }
     });
@@ -123,7 +137,7 @@ function Layout() {
                                     "&:hover": {
                                         background: "none"
                                     }
-                                }}>{page.title}</Link>
+                                }}>{page.icon}{page.title}</Link>
                             )
                         })}
                     </nav>
