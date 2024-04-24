@@ -36,9 +36,33 @@ nav{
   flex-direction: row;
   column-gap: 1rem;
 }
+#navIcon{
+  display: none;
+}
+.showNav{
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  background-color: #2E2877;
+  height: calc(100vh - 45px);
+  width: 100%;
+  top: 45px;
+  left: 0;
+  justify-content: space-evenly;
+  z-index: 100;
+}
+.showNav a{
+  color: white;
+}
 @media screen and (max-width: 850px) {
   nav{
     display: none;
+  }
+  #navIcon{
+    display: block;
+  }
+  nav .sideBtn{
+    background: #2E2877;
   }
   .sideBtn button{
     padding: 0;
@@ -65,14 +89,6 @@ nav{
   height: 100%;
   object-fit: cover;
 }
-.carousel .list .item::before{
-  content: "";
-  background-color: #00000088;
-  background-blend-mode: overlay;
-  position: absolute;
-  inset: 0 0 0 0;
-  transition: 0.5s;
-}
 .carousel .list .item .content{
   position: absolute;
   top: 20%;
@@ -80,19 +96,21 @@ nav{
   max-width: 80%;
   left: 50%;
   transform: translateX(-50%);
-  padding-right: 30%;
+  padding-right: 10%;
   color: #ffffff;
   text-shadow: 0 5px 10px #0004;
 }
 .carousel .list .item .content .author{
   font-weight: bold;
   letter-spacing: 10px;
+  text-transform: uppercase;
 }
 .carousel .list .item .content .title,
 .carousel .list .item .content .topic{
   font-weight: bold;
-  font-size: 5rem;
+  font-size: 3.5rem;
   line-height: 1.3em;
+  text-transform: uppercase;
 }
 .carousel .list .item .content .topic{
   color: #f1683a;
@@ -122,7 +140,7 @@ nav{
   bottom: 30px;
   left: 50%;
   width: max-content;
-  z-index: 100;
+  z-index: 50;
   display: flex;
   gap: 20px;
 }
@@ -179,7 +197,7 @@ nav{
   font-weight: bold;
   font-size: large;
   transition: .5s;
-  z-index: 100;
+  z-index: 30;
   cursor: pointer;
 }
 .arrows button:hover{
@@ -317,11 +335,18 @@ nav{
 }
 @media screen and (max-width: 1246px) {
   .carousel .list .item .content{
-      padding-right: 20%;
+      padding-right: 10%;
   }
   .carousel .list .item .content .title,
   .carousel .list .item .content .topic{
-      font-size: 3.6rem;
+      font-size: 2.3rem;
+  }
+  .carousel .list .item .content .des,
+  .carousel .list .item .content .author{
+      font-size: 0.8rem;
+      padding-right: 50%;
+      letter-spacing: unset;
+      width: 100%;
   }
 }
 @media screen and (max-width: 747px) {
@@ -330,7 +355,10 @@ nav{
   }
   .carousel .list .item .content .title,
   .carousel .list .item .content .topic{
-      font-size: 3rem;
+      font-size: 1.8rem;
+  }
+  .carousel .list .item .content .des{
+    padding-right: 0;
   }
   .thumbnail{
     top: calc(75% - 20px);
@@ -347,19 +375,16 @@ nav{
       padding-right: 0;
   }
   .carousel .list .item .content .topic{
-      font-size: 3rem;
+      font-size: 1.8rem;
   }
   .carousel .list .item .content .title{
-      font-size: 2rem;
+      font-size: 1.5rem;
+  }
+  .thumbnail{
+    top: calc(90% - 20px);
+  }
+  .arrows{
+      top: 90%;
   }
 }
-@media screen and (max-width: 377px) {
-  .carousel .list .item .content .topic{
-      font-size: 2.6rem;
-  }
-  
-  .carousel .list .item .content .des{
-      font-size: 1rem;
-  }
 
-}

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
@@ -8,19 +8,18 @@ import {
     AppBar,
     Stack,
     ThemeProvider,
-    Toolbar,
     createTheme,
     Link,
     Button,
     IconButton,
-    Divider,
     Box,
 } from "@mui/material"
 
 import {
     Language,
     Search,
-    Person2Outlined
+    Person2Outlined,
+    Menu
 } from '@mui/icons-material'
 import logo from '../logo.png'
 import { Outlet } from 'react-router-dom';
@@ -48,9 +47,16 @@ const pages = [{
 ]
 
 function Layout() {
+    const [navBar, setNavBar] = useState(false);
+
+    const toggleNav = () => {
+        setNavBar(!navBar);
+    }
+    
     useEffect(() => {
-        const header = document.querySelector(".header");
+        const header = document.querySelector("header");
         const toggleClass = "is-sticky";
+        const menuItem = document.querySelectorAll('nav a');
 
         window.addEventListener("scroll", () => {
             const currentScroll = window.pageYOffset;
@@ -60,7 +66,14 @@ function Layout() {
                 header.classList.remove(toggleClass);
             }
         });
-    })
+
+        if(window.location.pathname === '/'){
+            header.style.background = '#2E2877';
+            for (let i = 0; i < menuItem.length; i++) {
+                menuItem[i].style.color = "white";
+            }
+        }
+    });
 
     const theme = createTheme({
         palette: {
@@ -84,7 +97,7 @@ function Layout() {
         <>
         <ThemeProvider theme={theme}>
             <AppBar className='header' window sx={{
-                background: '#00000088',
+                background: 'white',
                 position: 'relative',
                 zIndex: '100',
                 boxShadow: 'none',
@@ -93,16 +106,17 @@ function Layout() {
                 justifyContent: 'space-between'
             }}>
                 <Box className="logo" sx={{
-                    padding: "0rem 2rem"
+                    padding: "0rem 2rem",
+                    background: 'white'
                 }}>
                     <img src={logo} alt="" srcset="" style={{width: '8rem'}} />
                 </Box>
                 <Stack component='nav' direction='row'>
-                    <nav>
+                    <nav className={navBar ? 'showNav' : ''}>
                         {pages.map((page) => {
                             return (
                                 <Link component={Button} disableElevation disableFocusRipple href={page.link} sx={{
-                                    color: "white",
+                                    color: "black",
                                     textDecoration: "none",
                                     fontSize: '0.8rem',
                                     padding: '0',
@@ -115,6 +129,7 @@ function Layout() {
                     </nav>
                     <Stack className='sideBtn' direction='row' spacing={1} sx={{
                         padding: "0rem 1rem 0rem 1rem",
+                        background: 'black'
                     }}>
                         <IconButton>
                             <Search sx={{
@@ -129,6 +144,13 @@ function Layout() {
                         <IconButton>
                             <Language sx={{
                                 color: 'white'
+                            }} />
+                        </IconButton>
+                        <IconButton id='navIcon' onClick={toggleNav} sx={{
+                            display: 'none'
+                        }}>
+                            <Menu sx={{
+                                color: 'white',
                             }} />
                         </IconButton>
                     </Stack>

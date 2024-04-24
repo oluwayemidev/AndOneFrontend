@@ -60,60 +60,60 @@ function Home() {
                     <div class="item">
                         <img src={pic1} alt="" />
                         <div class="content">
-                            <div class="author">OLUWAYEMI</div>
-                            <div class="title">DESIGN SLIDER</div>
-                            <div class="topic">PHOTOSHOP</div>
+                            <div class="author">Expertise You Can Trust</div>
+                            <div class="title">Your Partner in Sustainable </div>
+                            <div class="topic">Energy Solutions</div>
                             <div class="des">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad repudiandae dolorum suscipit reiciendis facilis officia sit! Ab labore, laboriosam laudantium alias quo voluptates dolor ducimus? Ipsum delectus deserunt nostrum optio?
+                            Choosing solar is a big decision, and we're here to guide you every step of the way. Our team of experts will work closely with you to design, install, and maintain a customized solar solution that meets your unique needs. With our commitment to quality and customer satisfaction, you can trust us to deliver excellence in sustainable energy.
                             </div>
                             <div class="buttons">
-                                <button>SEE MORE</button>
-                                <button>SUBSCRIBE</button>
+                                <button>EXPLORE</button>
+                                <button>PRODUCTS</button>
                             </div>
                         </div>
                     </div>
                     <div class="item">
                         <img src={pic2} alt="" />
                         <div class="content">
-                            <div class="author">OLUWAYEMI</div>
-                            <div class="title">DESIGN SLIDER</div>
-                            <div class="topic">PHOTOSHOP</div>
+                            <div class="author">Transforming Lives, One Panel at a Time</div>
+                            <div class="title">Empowering Communities with</div>
+                            <div class="topic">Solar Energy</div>
                             <div class="des">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad repudiandae dolorum suscipit reiciendis facilis officia sit! Ab labore, laboriosam laudantium alias quo voluptates dolor ducimus? Ipsum delectus deserunt nostrum optio?
+                              Our commitment extends beyond just providing solar panels. We believe in empowering communities by democratizing access to clean energy. From rural villages to urban neighborhoods, we're lighting up lives and paving the way towards a more sustainable tomorrow.
                             </div>
                             <div class="buttons">
-                                <button>SEE MORE</button>
-                                <button>SUBSCRIBE</button>
+                                <button>EXPLORE</button>
+                                <button>PRODUCTS</button>
                             </div>
                         </div>
                     </div>
                     <div class="item">
                         <img src={pic3} alt="" />
                         <div class="content">
-                            <div class="author">OLUWAYEMI</div>
-                            <div class="title">DESIGN SLIDER</div>
-                            <div class="topic">PHOTOSHOP</div>
+                            <div class="author">Experience Clean Energy Solutions</div>
+                            <div class="title">Harnessing the Power</div>
+                            <div class="topic">of the Sun</div>
                             <div class="des">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad repudiandae dolorum suscipit reiciendis facilis officia sit! Ab labore, laboriosam laudantium alias quo voluptates dolor ducimus? Ipsum delectus deserunt nostrum optio?
+                              Join the solar revolution and power your home or business with renewable energy. Our solar solutions offer reliability, sustainability, and substantial savings on your energy bills. Say goodbye to fossil fuels and hello to a brighter, greener future with our tailored solar systems.
                             </div>
                             <div class="buttons">
-                                <button>SEE MORE</button>
-                                <button>SUBSCRIBE</button>
+                                <button>EXPLORE</button>
+                                <button>PRODUCTS</button>
                             </div>
                         </div>
                     </div>
                     <div class="item">
                         <img src={pic4} alt="" />
                         <div class="content">
-                            <div class="author">OLUWAYEMI</div>
-                            <div class="title">DESIGN SLIDER</div>
-                            <div class="topic">PHOTOSHOP</div>
+                            <div class="author">Leading the Way in Solar Technology</div>
+                            <div class="title">Innovative Solar Solutions</div>
+                            <div class="topic">for a Brighter Tomorrow</div>
                             <div class="des">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad repudiandae dolorum suscipit reiciendis facilis officia sit! Ab labore, laboriosam laudantium alias quo voluptates dolor ducimus? Ipsum delectus deserunt nostrum optio?
+                              Innovation drives us forward. With cutting-edge solar technology and a passion for sustainability, we're continuously pushing boundaries to deliver the most efficient and reliable solar solutions. From smart energy management to advanced panel designs, we're shaping the future of solar energy.
                             </div>
                             <div class="buttons">
-                                <button>SEE MORE</button>
-                                <button>SUBSCRIBE</button>
+                                <button>EXPLORE</button>
+                                <button>PRODUCTS</button>
                             </div>
                         </div>
                     </div>
