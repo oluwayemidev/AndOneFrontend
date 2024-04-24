@@ -32,27 +32,27 @@ import { Outlet } from 'react-router-dom';
 const pages = [{
         title: "Home",
         link: "/",
-        icon: `${<Home />}`
+        icon: 'Home'
     },
     {
         title: "About Us",
         link: "/about-us",
-        icon: `${<People />}`
+        icon: 'People'
     },
     {
         title: "Products",
         link: "/products",
-        icon: `${<Shop />}`
+        icon: 'Shop'
     },
     {
         title: "Services",
         link: "/services",
-        icon: `<DesignServices />`
+        icon: 'DesignServices'
     },
     {
         title: "Contact Us",
         link: "/contact-us",
-        icon: `${<ContactPage />}`
+        icon: 'ContactPage'
     }
 ]
 
