@@ -97,11 +97,8 @@ function Layout() {
                 }}>
                     <img src={logo} alt="" srcset="" style={{width: '8rem'}} />
                 </Box>
-                <Stack component='nav' className='nav' direction='row'>
-                    <Stack direction='row' spacing={2} justifyContent={'space-between'} sx={{
-                        padding: "0rem 0rem 0rem 2rem",
-                        width: 'fit-content'
-                    }}>
+                <Stack component='nav' direction='row'>
+                    <nav>
                         {pages.map((page) => {
                             return (
                                 <Link component={Button} disableElevation disableFocusRipple href={page.link} sx={{
@@ -115,7 +112,7 @@ function Layout() {
                                 }}>{page.title}</Link>
                             )
                         })}
-                    </Stack>
+                    </nav>
                     <Stack direction='row' spacing={1} sx={{
                         padding: "0rem 2rem 0rem 2rem",
                     }}>
