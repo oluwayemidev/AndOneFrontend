@@ -309,7 +309,7 @@ header a{
       font-size: 3rem;
   }
   .thumbnail{
-      bottom: 50px;
+    top: calc(75% - 20px);
   }
   .thumbnail .item{
       height: 80px;
