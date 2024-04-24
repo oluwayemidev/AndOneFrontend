@@ -309,13 +309,13 @@ header a{
       font-size: 3rem;
   }
   .thumbnail{
-      bottom: 30%;
+      bottom: 20%;
   }
   .thumbnail .item{
       height: 80px;
   }
   .arrows{
-      top: 70%;
+      top: 75%;
   }
 }
 @media screen and (max-width: 670px) {
