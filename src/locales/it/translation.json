@@ -1,0 +1,16 @@
+{
+	"About": "Chi siamo",
+	"Address": "Inserisci l&#39;indirizzo",
+	"Contact": "CONTATTACI",
+	"Home": "Casa",
+	"location": "Inserisci la posizione",
+	"password": {
+		"label": "parola d'ordine",
+		"placeholder": "segnaposto password..."
+	},
+	"React": "Questo è Reagire",
+	"username": {
+		"label": "nome utente",
+		"placeholder": "segnaposto..."
+	}
+}

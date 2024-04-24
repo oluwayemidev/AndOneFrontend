@@ -1,0 +1,16 @@
+{
+	"About": "关于我们",
+	"Address": "输入地址",
+	"Contact": "联系我们",
+	"Home": "家",
+	"location": "输入位置",
+	"password": {
+		"label": "密码",
+		"placeholder": "密码占位符..."
+	},
+	"React": "这是 React",
+	"username": {
+		"label": "用户名",
+		"placeholder": "占位符..."
+	}
+}

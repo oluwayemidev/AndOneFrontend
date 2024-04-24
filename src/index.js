@@ -1,13 +1,26 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import i18next from "i18next";
+import CssBaseline from '@mui/material/CssBaseline';
+
+i18next.init({
+    interpolation: { escapeValue: false },
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <CssBaseline />
+    <Suspense fallback={<div>Loading....</div>}>
+      <App />
+    </Suspense>
   </React.StrictMode>
 );
 

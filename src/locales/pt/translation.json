@@ -1,0 +1,16 @@
+{
+	"About": "Sobre nós",
+	"Address": "Digite o endereço",
+	"Contact": "Contate-nos",
+	"Home": "Lar",
+	"location": "Insira o local",
+	"password": {
+		"label": "Senha",
+		"placeholder": "espaço reservado para senha..."
+	},
+	"React": "Isso é Reagir",
+	"username": {
+		"label": "nome de usuário",
+		"placeholder": "espaço reservado..."
+	}
+}
