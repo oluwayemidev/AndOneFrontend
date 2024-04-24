@@ -92,7 +92,7 @@ function Layout() {
                 flexDirection: 'row',
                 justifyContent: 'space-between'
             }}>
-                <Box sx={{
+                <Box className="logo" sx={{
                     padding: "0rem 2rem"
                 }}>
                     <img src={logo} alt="" srcset="" style={{width: '8rem'}} />
@@ -113,8 +113,8 @@ function Layout() {
                             )
                         })}
                     </nav>
-                    <Stack direction='row' spacing={1} sx={{
-                        padding: "0rem 2rem 0rem 2rem",
+                    <Stack className='sideBtn' direction='row' spacing={1} sx={{
+                        padding: "0rem 1rem 0rem 1rem",
                     }}>
                         <IconButton>
                             <Search sx={{

@@ -40,6 +40,12 @@ nav{
   nav{
     display: none;
   }
+  .sideBtn button{
+    padding: 0;
+  }
+  div.logo{
+    padding-right: 0;
+  }
 }
 
 .carousel{
